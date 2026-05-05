@@ -167,7 +167,7 @@ const UrlDetection = () => {
                               {result.status}
                           </h3>
                           <div style={{ padding: '0.25rem 0.75rem', borderRadius: '2rem', fontSize: '0.75rem', fontWeight: 'bold', background: result.status === 'safe' ? 'rgba(34, 197, 94, 0.1)' : 'rgba(244, 63, 94, 0.1)', color: result.status === 'safe' ? 'var(--success)' : 'var(--accent)', border: `1px solid ${result.status === 'safe' ? 'var(--success)' : 'var(--accent)'}` }}>
-                              {result.status === 'safe' ? '98% Secure' : 'High Risk'}
+                              {result.status === 'safe' ? `${Math.round(result.confidence * 100)}% Secure` : `${Math.round(result.confidence * 100)}% Risk`}
                           </div>
                       </div>
                       <p style={{ color: 'var(--text-dim)', wordBreak: 'break-all', fontSize: '0.95rem', margin: 0 }}>{result.url}</p>
